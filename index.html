@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Duplicate Word Finder</title>
+  <link rel='stylesheet' href='https://codepen.io/finnhvman/pen/MQyJxV.css'>
+<link rel='stylesheet' href='https://codepen.io/finnhvman/pen/YeXwNY.css'>
+<link rel='stylesheet' href='https://codepen.io/finnhvman/pen/pOeyjE.css'>
+<link rel='stylesheet' href='https://codepen.io/finnhvman/pen/LJWJVR.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>
+  <h1>Duplicate Word Finder</h1>
+</header>
+<main>
+  <div id="actions">
+    <div>
+      <button id="copy" class="pure-material-button-contained">Copy</button>
+      <button id="clear" class="pure-material-button-text">Clear</button>
+    </div>
+    <label class="pure-material-switch">
+            <input id="spellcheck" type="checkbox" checked>
+            <span>Spell Check</span>
+        </label>
+  </div>
+  <div id="options">
+    <label class="pure-material-slider">
+      <input id="length" type="range" min="1" max="10" value="4">
+      <span>Minimum Word Length: <output>4</output></span>
+    </label>
+  </div>
+  <hr>
+  <div id="text">
+    <textarea>
+Paste your text by pressing Ctrl+V or ⌘+V. (Once you click here, these instructions will be cleared for your convenience ;)
+
+The slider on the top right can be used to adjust the minimum length of words to detect. The default setting is 4, so words like 'and', 'for', 'the', etc. won't pollute the analysis. The duplicate words can be found below the slider highlighted by various colors. The list is sorted by the number of occurrence starting with the highest. The highlighting for any individual word can be turned off by clicking on the word in the list.
+
+You can edit your text here, duplicates are detected real time. When you're finished editing, you can copy or clear the result using the corresponding buttons. You can also turn off the spell checker if you don't need it.
+
+~~~
+
+I often find myself sending emails and messages consisting of two or three sentences. This is where I usually commit an unintentional word repetition, but only realize it after hitting send. This tool comes handy for such cases, and you're free to use it for your benefit as well! :)
+</textarea>
+    <div id="highlights"></div>
+  </div>
+  <ol id="list"></ol>
+</main>
+<template>
+    <li class="item">
+        <label>
+            <input class="hidden" type="checkbox">
+            <span class="count"></span>
+            <span class="word"></span>
+        </label>
+    </li>
+</template>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

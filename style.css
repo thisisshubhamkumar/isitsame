@@ -1,0 +1,206 @@
+html {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  padding: 1.2rem 2.4rem;
+  background-color: #2196f3;
+}
+
+h1 {
+  margin: 0;
+  font-size: 4.8rem;
+  font-weight: normal;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 1.2rem;
+}
+
+button {
+  margin: 0 12px;
+}
+
+#actions {
+  flex: 3 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1.2rem;
+}
+
+#actions > label {
+  margin-right: 0.6rem;
+}
+
+#options {
+  flex: 1 0 0;
+  padding: 1.2rem;
+  min-width: 20rem;
+}
+
+#options > label {
+  width: 100%;
+}
+
+hr {
+  margin: 0;
+  border: none;
+  width: 100%;
+  height: 0;
+}
+
+mark {
+  margin: -0.2rem;
+  border: 0.2rem solid transparent;
+  border-radius: 0.4rem;
+  color: transparent;
+  background: transparent;
+}
+
+#text {
+  position: relative;
+  flex: 3 0 0;
+  padding: 0 1.2rem;
+  transition: height 0.3s;
+}
+
+textarea,
+#highlights {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  border: solid 0.1rem rgba(0, 0, 0, 0.54);
+  border-radius: 0.4rem;
+  padding: 1.3rem;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 2rem;
+  outline: none;
+  transition: height 0.3s;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: calc(100% - 2.4rem);
+  height: 100%;
+  background: transparent;
+  resize: none;
+}
+
+textarea:focus {
+  border: solid 0.2rem #2196f3;
+  padding: 1.2rem;
+}
+
+#highlights {
+  z-index: -1;
+  box-sizing: border-box;
+  width: calc(100% - 2.4rem);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#list {
+  position: relative;
+  flex: 1 0 0;
+  padding: 0 1.2rem;
+  min-width: 20rem;
+  min-height: calc(100vh - 24rem);
+  transition: height 0.3s;
+}
+
+.item {
+  position: absolute;
+  transition: top 0.3s, opacity 0.3s;
+  animation: add 0.3s;
+}
+
+.item > label {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.count,
+.word {
+  display: inline-block;
+  border: solid 0.2rem;
+  box-shadow: inset 20rem 2rem transparent;
+  transition: border 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.hidden:checked ~ .count,
+.hidden:checked ~ .word {
+  box-shadow: inset 20rem 2rem white;
+}
+
+.count {
+  border-radius: 50%;
+  min-width: 1.8rem;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.word {
+  padding: 0 0.2rem;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+}
+
+.obsolete {
+  opacity: 0;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  padding: 2.4rem 3.6rem;
+  color: #555;
+  background-color: #eee;
+  font-size: 1.4rem;
+}
+
+footer > div:last-child {
+  text-align: end;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+@keyframes add {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
